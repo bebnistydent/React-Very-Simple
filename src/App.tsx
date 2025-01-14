@@ -9,6 +9,7 @@ import { UncontrolledRating } from './components/rating/UncontrolledRating';
 import UncotrolledOnOff from './components/onOff/UncontrolledOnOff';
 import { Controledinput, ControlledChecBox, GetImputById, TrackedImput, UncontroledInput, ControlledInput } from './components/input/Input';
 import { onClickItem } from './components/accordion/Accordion';
+import { Select } from './components/select/Select';
 
 function App() {
   let [ratinValue, setRatingValue] = useState<RatingValueType>(0)
@@ -31,9 +32,11 @@ function App() {
       <UncontrolledRating />
 
       <Rating value={ratinValue} onClick = {setRatingValue}/>*/}
-      <Accordion title={'Accordion'}  collapsed = {accordionCollapsed} 
+      {/* <Accordion title={'Accordion'}  collapsed = {accordionCollapsed} 
        onChange={() => {setAccordionCollapsed(!accordionCollapsed)}} 
-       items = {[{title: 'me', value: 1}, {title: "you", value: 2}, ] } onClick = {onClickItem}/> 
+       items = {[{title: 'me', value: 1}, {title: "you", value: 2}, ] } onClick = {onClickItem}/>  */}
+
+{/* <Select value={2} onChange={handleChange} items={items}/> */}
 
     </div>
   );
