@@ -26,7 +26,7 @@ function App() {
 
       {/* <UncotrolledOnOff onChange = {setSwitchOn}/> {switchOn.toString()} */}
       
-     
+     <UncontrolldAccordion title = {"--Agein--"} />
       {/* <OnOff on = {switchOn} onChange={setSwitchOn} /> */}
       {/* <UncontrolldAccordion title = {"revolt!"}/>
       <UncontrolledRating />

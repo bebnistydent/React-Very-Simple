@@ -1,26 +1,52 @@
-import React, { useState } from "react"
+import React, { useReducer, useState } from "react";
+import { reducer, COLLAPSED } from "./Reducer";
 
 type accordionPropsType = {
   title: string
   
 }
 
+// type actionType = {
+//   type: string
+
+// }
+
+// const COLLAPSED_1 = "Switch-Collapsed"
+// const reducer = (state: boolean, action: actionType) => {
+  
+//     console.log("Reducer start")
+//     console.log(state)
+//     console.log(action)
+//     console.log("Reducer and")
+
+//     switch (action.type) {
+//         case COLLAPSED:
+//           return !state;
+//         default:
+//           return state;
+          
+//     }
+
+
+// }
+
+
+
 export function UncontrolldAccordion (props: accordionPropsType) {
 
-  let [collapsed, setCollapsed] = useState(false);
- 
-  const click = () => {
-    collapsed ? setCollapsed(false) : setCollapsed(true);
-  }
-  
-  
+  //let [collapsed, setCollapsed] = useState(false);
 
+  let [state, dispatch] = useReducer(reducer, {collapsed: false});
+ 
+  
 
      return (
       <> 
-        ---{props.title}---
-    <Accordiontitle title={"Menu"} onClick ={ () => {setCollapsed(!collapsed)}}/>
-    {collapsed && <Accordionbody />}
+       
+    {/* <Accordiontitle title={props.title} onClick ={ () => {setCollapsed(!collapsed)}}/> */}
+    <Accordiontitle title={props.title} onClick ={ () => {
+      dispatch({type: COLLAPSED})}}/>
+    {!state.collapsed && <Accordionbody />}
       </>
       );
    
